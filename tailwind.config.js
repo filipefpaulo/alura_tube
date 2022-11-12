@@ -6,7 +6,13 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        red: {
+          youtube: "#FF0000",
+        },
+      },
+    },
   },
   plugins: [],
 };

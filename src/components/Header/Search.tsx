@@ -1,12 +1,15 @@
 import { MagnifyingGlass } from "phosphor-react";
+import { InputText } from "../InputText";
 
 export function Search() {
   return (
     <div className="flex flex-row">
-      <input
-        className="border border-zinc-400 p-3 px-4 w-96 bg-inherit text-inherit placeholder:text-inherit"
-        type="text"
+      <InputText
         placeholder="Vídeo"
+        name="search-video"
+        value=""
+        onChange={() => {}}
+        className="w-96"
       />
       <button
         type="button"
