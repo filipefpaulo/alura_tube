@@ -10,7 +10,7 @@ export function User() {
         className="w-screen h-[250px] bg-cover bg-no-repeat bg-center"
         style={{
           backgroundImage:
-            "url(https://i.pinimg.com/originals/c6/f0/7b/c6f07bd3b603b121e40ead8362b454d4.jpg)",
+            "url(https://3.bp.blogspot.com/-zvvZFrfFQ6k/XGHkab95xcI/AAAAAAAACdY/9HyNnoPd1mEtM0o3LG3M1hF6K9z2inW3wCKgBGAs/w5120-h2160-c/mountain-landscape-abstract-4K-151.jpg)",
         }}
       />
       <div
