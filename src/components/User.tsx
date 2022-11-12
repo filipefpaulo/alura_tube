@@ -14,9 +14,8 @@ export function User() {
         }}
       />
       <div
-        className={`flex flex-row items-center p-4 bg-zinc-${
-          darkMode ? "200" : "800"
-        }`}
+        className={`flex flex-row items-center p-4 
+          bg-zinc-${darkMode ? "200" : "800"}`}
       >
         <Image
           src="https://github.com/filipefpaulo.png"
@@ -29,7 +28,7 @@ export function User() {
           <span className={`text-2xl text-zinc-${darkMode ? "900" : "200"}`}>
             Filipe Ferreira Paulo
           </span>
-          <span className="text-md">Fullstack web Developer</span>
+          <span className="text-md text-inherit">Fullstack web Developer</span>
         </div>
       </div>
     </div>

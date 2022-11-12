@@ -16,9 +16,8 @@ export function DarkModeToggle() {
           onChange={() => setDarkMode(!darkMode)}
         />
         <div
-          className={`flex flex-row w-14 rounded-full align-middle justify-between p-1 bg-zinc-${
-            darkMode ? "300" : "800"
-          }`}
+          className={`flex flex-row w-14 rounded-full align-middle justify-between p-1 
+            bg-zinc-${darkMode ? "300" : "800"}`}
         >
           <Moon size={20} weight="bold" />
           <Sun size={20} weight="bold" />

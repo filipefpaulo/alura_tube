@@ -11,9 +11,10 @@ export function DarkModeProvider({ children }: { children: ReactNode }) {
   return (
     <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
       <div
-        className={`h-screen bg-zinc-${darkMode ? "100" : "900"} text-zinc-${
-          darkMode ? "900" : "400"
-        }`}
+        className={`h-screen 
+          ${
+            darkMode ? "bg-zinc-100 text-zinc-900" : "bg-zinc-900 text-zinc-400"
+          }`}
       >
         {children}
       </div>
