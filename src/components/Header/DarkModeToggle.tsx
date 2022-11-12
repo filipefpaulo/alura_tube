@@ -1,6 +1,7 @@
 import { Moon, Sun } from "phosphor-react";
 import { useContext } from "react";
 import { DarkModeContext } from "../../providers/DarkMode";
+import cx from "classnames";
 
 export function DarkModeToggle() {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
@@ -16,21 +17,22 @@ export function DarkModeToggle() {
           onChange={() => setDarkMode(!darkMode)}
         />
         <div
-          className={`flex flex-row w-14 rounded-full align-middle justify-between p-1 
-            bg-zinc-${darkMode ? "300" : "800"}`}
+          className={cx(
+            "flex flex-row w-14 rounded-full align-middle justify-between p-1",
+            {
+              "bg-zinc-300": darkMode,
+              "bg-zinc-800": !darkMode,
+            }
+          )}
         >
           <Moon size={20} weight="bold" />
           <Sun size={20} weight="bold" />
         </div>
         <div
-          className={`
-            dot absolute top-[2px]  w-6 h-6 rounded-full transition
-            ${
-              darkMode
-                ? "transform translate-x-full right-[26px] bg-zinc-800"
-                : "left-[2px] bg-zinc-200"
-            }
-        `}
+          className={cx("absolute top-[2px]  w-6 h-6 rounded-full transition", {
+            "transform translate-x-full right-[26px] bg-zinc-800": darkMode,
+            "left-[2px] bg-zinc-200": !darkMode,
+          })}
         />
       </div>
     </label>

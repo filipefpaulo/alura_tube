@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useState } from "react";
+import cx from "classnames";
 
 export const DarkModeContext = createContext({
   darkMode: false,
@@ -11,10 +12,10 @@ export function DarkModeProvider({ children }: { children: ReactNode }) {
   return (
     <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
       <div
-        className={`h-screen 
-          ${
-            darkMode ? "bg-zinc-100 text-zinc-900" : "bg-zinc-900 text-zinc-400"
-          }`}
+        className={cx("h-screen", {
+          "bg-zinc-100 text-zinc-900": darkMode,
+          "bg-zinc-900 text-zinc-400": !darkMode,
+        })}
       >
         {children}
       </div>

@@ -2,6 +2,7 @@ import { X } from "phosphor-react";
 import { useContext } from "react";
 import { DarkModeContext } from "../../providers/DarkMode";
 import { InputText } from "../InputText";
+import cx from "classnames";
 
 interface FormAddVideoProps {
   setIsFormOpen: (value: boolean) => void;
@@ -19,8 +20,10 @@ export function FormAddVideo({ setIsFormOpen }: FormAddVideoProps) {
       }}
     >
       <div
-        className={`flex flex-col w-[30%] p-8 rounded-2xl 
-          ${darkMode ? "bg-[#ffffff99]" : "bg-inherit"}`}
+        className={cx("flex flex-col w-[30%] p-8 rounded-2xl", {
+          "bg-[#ffffff99]": darkMode,
+          "bg-inherit": !darkMode,
+        })}
       >
         <button
           type="button"

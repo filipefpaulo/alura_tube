@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useContext } from "react";
 import { DarkModeContext } from "../providers/DarkMode";
+import cx from "classnames";
 
 export function User() {
   const { darkMode } = useContext(DarkModeContext);
@@ -15,8 +16,10 @@ export function User() {
         }}
       />
       <div
-        className={`flex flex-row items-center p-4 
-          bg-zinc-${darkMode ? "200" : "800"}`}
+        className={cx("flex flex-row items-center p-4", {
+          "bg-zinc-200": darkMode,
+          "bg-zinc-800": !darkMode,
+        })}
       >
         <Image
           src="https://github.com/filipefpaulo.png"
@@ -26,7 +29,12 @@ export function User() {
           className="rounded-full"
         />
         <div className="ml-3 flex flex-col">
-          <span className={`text-2xl text-zinc-${darkMode ? "900" : "200"}`}>
+          <span
+            className={cx("text-2xl", {
+              "text-zinc-800": darkMode,
+              "text-zinc-200": !darkMode,
+            })}
+          >
             Filipe Ferreira Paulo
           </span>
           <span className="text-md text-inherit">Fullstack web Developer</span>
