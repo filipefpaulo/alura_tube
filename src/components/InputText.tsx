@@ -1,3 +1,5 @@
+import cx from "classnames";
+
 interface InputTextProps {
   placeholder: string;
   name: string;
@@ -15,7 +17,10 @@ export function InputText({
 }: InputTextProps) {
   return (
     <input
-      className={`border border-zinc-400 p-3 px-4 bg-inherit text-inherit placeholder:text-inherit ${className}`}
+      className={cx(
+        "border border-zinc-400 p-3 px-4 bg-inherit text-inherit placeholder:text-inherit",
+        className
+      )}
       name={name}
       onChange={onChange}
       placeholder={placeholder}
