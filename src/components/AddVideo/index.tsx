@@ -4,6 +4,7 @@ import { FormAddVideo } from "./FormAddVideo";
 
 export function AddVideo() {
   const [isFormOpen, setIsFormOpen] = useState(false);
+
   return (
     <div>
       <button

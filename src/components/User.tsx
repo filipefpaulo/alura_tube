@@ -4,6 +4,7 @@ import { DarkModeContext } from "../providers/DarkMode";
 
 export function User() {
   const { darkMode } = useContext(DarkModeContext);
+
   return (
     <div className="flex flex-col">
       <div

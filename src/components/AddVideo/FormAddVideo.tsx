@@ -3,12 +3,13 @@ import { useContext } from "react";
 import { DarkModeContext } from "../../providers/DarkMode";
 import { InputText } from "../InputText";
 
-export function FormAddVideo({
-  setIsFormOpen,
-}: {
+interface FormAddVideoProps {
   setIsFormOpen: (value: boolean) => void;
-}) {
+}
+
+export function FormAddVideo({ setIsFormOpen }: FormAddVideoProps) {
   const { darkMode } = useContext(DarkModeContext);
+
   return (
     <form
       className="flex align-middle justify-center absolute top-0 left-0 w-full h-full bg-[#00000099] p-40"
@@ -19,7 +20,7 @@ export function FormAddVideo({
     >
       <div
         className={`flex flex-col w-[30%] p-8 rounded-2xl 
-          ${darkMode && "bg-[#ffffff99]"}`}
+          ${darkMode ? "bg-[#ffffff99]" : "bg-inherit"}`}
       >
         <button
           type="button"
