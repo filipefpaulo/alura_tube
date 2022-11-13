@@ -9,7 +9,7 @@ export function User() {
   return (
     <div className="flex flex-col">
       <div
-        className="w-screen h-[250px] bg-cover bg-no-repeat bg-center"
+        className="w-full h-[300px] bg-cover bg-no-repeat bg-center"
         style={{
           backgroundImage:
             "url(https://3.bp.blogspot.com/-zvvZFrfFQ6k/XGHkab95xcI/AAAAAAAACdY/9HyNnoPd1mEtM0o3LG3M1hF6K9z2inW3wCKgBGAs/w5120-h2160-c/mountain-landscape-abstract-4K-151.jpg)",
