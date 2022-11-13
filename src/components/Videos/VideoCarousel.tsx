@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { MonitorPlay } from "phosphor-react";
 import cx from "classnames";
 import { DarkModeContext } from "../../providers/DarkMode";
@@ -12,17 +11,16 @@ export function VideoCarousel({ videos }: { videos: [] }) {
       {videos.map((video: any) => {
         return (
           video.title && (
-            <div
+            <a
+              href={video.url}
+              target="blank"
               key={video.id}
               className="p-2 w-[20%] max-w-[250px] min-w-[150px]"
             >
               {video.thumb ? (
-                <Image
-                  src={video.thumb}
-                  alt={video.title}
-                  width={230}
-                  height={140}
-                  className={cx("rounded-xl")}
+                <div
+                  className="w-auto max-w[230px] h-[140px] flex justify-center rounded-xl bg-cover bg-no-repeat bg-center"
+                  style={{ backgroundImage: `url(${video.thumb})` }}
                 />
               ) : (
                 <div
@@ -34,11 +32,11 @@ export function VideoCarousel({ videos }: { videos: [] }) {
                     }
                   )}
                 >
-                  <MonitorPlay size={140} className="h-fit w-fit " />
+                  <MonitorPlay size={140} className="h-fit w-fit" />
                 </div>
               )}
               {video.title}
-            </div>
+            </a>
           )
         );
       })}
