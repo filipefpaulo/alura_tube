@@ -3,7 +3,7 @@ import cx from "classnames";
 
 export const DarkModeContext = createContext({
   darkMode: false,
-  setDarkMode: (a: boolean) => {},
+  setDarkMode: (_a: boolean) => {},
 });
 
 export function DarkModeProvider({ children }: { children: ReactNode }) {

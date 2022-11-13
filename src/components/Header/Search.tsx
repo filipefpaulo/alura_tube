@@ -9,7 +9,7 @@ export function Search() {
         name="search-video"
         value=""
         onChange={() => {}}
-        className="w-96"
+        className="w-[60%]"
       />
       <button
         type="button"

@@ -36,7 +36,7 @@ export function FormAddVideo({ setIsFormOpen }: FormAddVideoProps) {
       }}
     >
       <div
-        className={cx("flex flex-col w-[30%] p-8 rounded-2xl", {
+        className={cx("flex flex-col w-[30%] min-w-[350px] p-8 rounded-2xl", {
           "bg-[#ffffff99]": darkMode,
           "bg-inherit": !darkMode,
         })}
