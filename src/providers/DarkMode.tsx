@@ -12,7 +12,7 @@ export function DarkModeProvider({ children }: { children: ReactNode }) {
   return (
     <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
       <div
-        className={cx("h-screen", {
+        className={cx("h-full w-full", {
           "bg-zinc-100 text-zinc-900": darkMode,
           "bg-zinc-900 text-zinc-400": !darkMode,
         })}

@@ -16,5 +16,12 @@ export function useSupabase() {
       }
       return data;
     },
+    addNewVideo: async (video: any) => {
+      const { data, error } = await supabase.from("alura_tube").insert(video);
+      if (error) {
+        console.error(error);
+      }
+      return data;
+    },
   };
 }
