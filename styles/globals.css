@@ -7,5 +7,5 @@
 }
 
 body {
-  @apply scrollbar-none;
+  @apply scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-zinc-300;
 }

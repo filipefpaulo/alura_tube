@@ -2,32 +2,33 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 import { useSupabase } from "../api/supabase";
 
 export const VideoContext = createContext({
-  playlists: {},
+  videos: {},
+  filterVideos: (_a: string) => {},
 });
 
 export function VideoProvider({ children }: { children: ReactNode }) {
   const { getAllVideos } = useSupabase();
 
-  const [playlists, setPlaylist] = useState({});
+  const [videos, setVideos] = useState<any>([]);
 
   useEffect(() => {
     (async function () {
-      const videos = (await getAllVideos()) || [];
-      const newPlaylists: any = {};
-
-      videos.forEach((video: any) => {
-        if (!newPlaylists[video.category]) {
-          newPlaylists[video.category] = [];
-        }
-        newPlaylists[video.category].push(video);
-      });
-
-      setPlaylist(newPlaylists);
+      setVideos((await getAllVideos()) || []);
     })();
   }, []);
 
+  const filterVideos = (filter: string) => {
+    setVideos(
+      videos.filter(
+        ({ title, category }: { title: string; category: string }) =>
+          title.toLowerCase().includes(filter.toLowerCase()) ||
+          category.toLowerCase().includes(filter.toLowerCase())
+      )
+    );
+  };
+
   return (
-    <VideoContext.Provider value={{ playlists }}>
+    <VideoContext.Provider value={{ videos, filterVideos }}>
       {children}
     </VideoContext.Provider>
   );
